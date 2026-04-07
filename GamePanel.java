@@ -51,7 +51,7 @@ public class GamePanel extends JPanel implements KeyListener, Runnable {
 		for (int row = 0; row < bricks.length; row++) {
 			for (int col = 0; col < bricks[row].length; col++) {
 				//* sets the position of each brick
-				int X = col * 78 + 10;
+				int X = col * 100 + 10;
 				int Y = row * 30 + 50;
 				bricks[row][col] = new Brick(X, Y, 70, 20);
 			}
