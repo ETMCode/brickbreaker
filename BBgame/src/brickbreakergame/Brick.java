@@ -2,7 +2,7 @@ package brickbreakergame;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-
+//hi arid
 public class Brick {
     // Brick position
     int x, y;
