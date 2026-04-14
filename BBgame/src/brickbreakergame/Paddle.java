@@ -44,7 +44,7 @@ public class Paddle implements KeyListener {
 //Create a second paddle on the inverse so like -350x,-700y
 //Ask if we want paddle to be able to turn (tilt on an axis)
 //If Brick or Bricks wants to add effects that could invert paddles control code (ie: make it use VK_W or VK_S when (blankbrick) hit)
-  
+//Move ball collison to paddle folder  
   
 
   
