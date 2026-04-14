@@ -27,7 +27,9 @@ public class Paddle implements KeyListener {
     int button = Input1.getKeyCode();
  //VK stands for virtual key! Its much easier to call then getting the hexcode number and when I add a second paddle I can use VK to call the arrow keys as oppsed to finding their respective hexnumber 
  //Was going to use arrow keys at first but for now just want to test this all with A and D to make it easier (*can change ASAP if needed*)
- 
+
+
+  //add hold down button options
   if (button == KeyEvent.VK_A) { x = x -1; }
  //moves paddle1 to the left (change -1 if we want to increase the space it moves)
   if (button == KeyEvent.VK_D) { x = x +1; }
