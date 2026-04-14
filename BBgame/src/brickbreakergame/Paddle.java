@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 //the guidlines for what happens with the keyboard (we can use it for bricks if we wanted/will talk in class) *powerups??!?*
 //I think keystroke is already imported could be wrong though
-//(800, 600) <-Jframes size limits
+//(w800, h600) <-Jframes size limits
 
 
 //Adding implements KeyListener will tell our main this is the section that ultilizes those inputs later in JFrame
