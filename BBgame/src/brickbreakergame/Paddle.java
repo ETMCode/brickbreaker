@@ -10,7 +10,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 //the guidlines for what happens with the keyboard (we can use it for bricks if we wanted/will talk in class) *powerups??!?*
 //I think keystroke is already imported could be wrong though
-//(10, 10, 800, 800) <-Jframes size limits
+//(800, 600) <-Jframes size limits
+
 
 //Adding implements KeyListener will tell our main this is the section that ultilizes those inputs later in JFrame
 public class Paddle implements KeyListener {
@@ -18,7 +19,7 @@ public class Paddle implements KeyListener {
 //Theres 2 ways to do this either if statements or utilizing the keystroke command which is tied to the Jframe
 // Scannner Keys1 = new Scanner(System.in); (was going to use this but requires ENTER after every input so no go)
 
-  private int x = 350;
+  private int x = **xx;
   private int y = 700;
 //This is the Paddles1 starting point in JFrame (should be middle and almost at bottom)
 
@@ -41,11 +42,12 @@ public class Paddle implements KeyListener {
  //Thses two are required becasue of the Keylistner tool (its dumb but it wont run without them)
   
 //[TODO] 
-//Create a second paddle on the inverse so like -350x,-700y
+//Create a second paddle on the inverse so like -
 //Ask if we want paddle to be able to turn (tilt on an axis)
 //If Brick or Bricks wants to add effects that could invert paddles control code (ie: make it use VK_W or VK_S when (blankbrick) hit)
 //Move ball collison to paddle folder  
-  
+//Need setters and getters 
+//If keys calls goes to me then goes to him then back to me?
 
   
 }
