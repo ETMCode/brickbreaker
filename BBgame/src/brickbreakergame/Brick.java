@@ -78,6 +78,3 @@ public class Brick {
         hitsRemaining = 3;      
     } 
  
-public class Brick {
-
-}
