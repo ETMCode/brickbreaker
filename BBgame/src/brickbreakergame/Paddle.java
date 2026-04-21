@@ -33,6 +33,16 @@ public Paddle() {
    int paddlelength = 20;
    int paddlewidth = 60;
 }
+//[Paddles Getters] (Defined By Ethan 4/21/26 Subject to change)
+public int getpaddlex() {
+  return x; }
+public int getpaddley() {
+  return y; }
+public int getpaddlength() {
+  return paddlelength; }
+public int get paddlewidth() {
+  return paddlewidth; }
+
   public void draw(Graphics g) {
     g.setColor(Color.WHITE);
     g.fillRect(x, y, paddlewidth, paddlelength);
