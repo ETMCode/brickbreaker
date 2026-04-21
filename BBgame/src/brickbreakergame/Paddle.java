@@ -5,6 +5,8 @@ import javax.swing.Keystroke;
 import java.awt.event.KeyEvent;
 //allows for VK(s) virtual keys
 import java.awt.event.KeyListener;
+import java.awt.*;
+//allows for the coloring in gamepannel
 
 //the guidlines for what happens with the keyboard (we can use it for bricks if we wanted/will talk in class) *powerups??!?*
 //I think keystroke is already imported could be wrong though
@@ -15,7 +17,7 @@ import java.awt.event.KeyListener;
 //Adding implements KeyListener will tell our main this is the section that ultilizes those inputs later in JFrame
 public class Paddle implements KeyListener {
 //This is one of two paddles and Paddle class may change to Paddle1 *4/13/26
-//Theres 2 ways to do this either if statements or utilizing the keystroke command which is tied to the Jframe
+  
 
 private int x;
 private int y;
@@ -24,22 +26,26 @@ private int paddlewidth;
 //Decleration of the int(s)
 
   
-  private int x = 400;
-  private int y = 100;
-  private int paddlelength =
-  private int paddlewidth = 
-
+public Paddle() {
+//[Consructor] Starting PaddlePoint and Size  
+   int x = 400;
+   int y = 500;
+   int paddlelength = 20;
+   int paddlewidth = 60;
+}
+  public void draw(Graphics g) {
+    g.setColor(Color.WHITE);
+    g.fillRect(x, y, paddlewidth, paddlelength);
+  }
+  // ^ the data for when game panel calls to my paddle (method is draw,utlity is the java* import)
+  
   public void keyPressed(KeyEvent Input1)
   {
     int button = Input1.getKeyCode();
- //VK stands for virtual key! Its much easier to call then getting the hexcode number and when I add a second paddle I can use VK to call the arrow keys as oppsed to finding their respective hexnumber 
- 
-
-
+  //vk is for virtual key
   //add hold down button options
   if (button == KeyEvent.VK_A) { x = x -10; }
  //moves paddle1 to the left 
-    
   if (button == KeyEvent.VK_D) { x = x +10; }
  //moves paddle1 to the right
   }
