@@ -40,7 +40,7 @@ public int getpaddley() {
   return y; }
 public int getpaddlength() {
   return paddlelength; }
-public int get paddlewidth() {
+public int getpaddlewidth() {
   return paddlewidth; }
 
   public void draw(Graphics g) {
