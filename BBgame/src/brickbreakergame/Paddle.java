@@ -1,4 +1,4 @@
-package brickbreaker;
+package brickbreakergame;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,8 +11,8 @@ public class Paddle {
 	int speed = 10; // how fast the paddle is
 	
 	// these are set to true by Game Panel when arrow keys are pressed  
-	boolean movingleft = false; 
-	boolean movingright = false;
+	boolean movingLeft = false; 
+	boolean movingRight = false;
 	
 	//constructor - called when we do: new paddle 
 	public Paddle(int x, int y) {
@@ -22,11 +22,11 @@ public class Paddle {
 	//called every frame - moves paddle if a key is being held
 	public void move(int panelWidth) {
 		// only move left if we are not at the edge of the left side so we don't go off screen
-		if (movingleft & x >0) {
+		if (movingLeft & x >0) {
 			x -= speed; // move left by subtracting pixels 
 		}
 		// only move right if we are not at the edge of the right side so don't go off screen 
-		if (movingright & x + width < panelWidth) {
+		if (movingRight & x + width < panelWidth) {
 			x += speed; } // move right by adding pixels 
 		}
 			// draws the paddle on the screen
