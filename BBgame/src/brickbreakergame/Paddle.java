@@ -1,4 +1,4 @@
-package brickbreaker;
+package brickbreakergame;
 
 import java.awt.Color;
 import java.awt.Graphics;
