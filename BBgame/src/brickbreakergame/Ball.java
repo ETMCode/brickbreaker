@@ -1,5 +1,4 @@
-
-package brickbraker;
+package brickbreakergame;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
