@@ -1,4 +1,4 @@
-package game;
+package brickbreakergame;
 
 import javax.swing.*;
 import java.awt.*;
