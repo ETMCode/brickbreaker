@@ -1,4 +1,4 @@
-package game;
+package brickbreakergame;
 /**
 * Project: BB game
 * author Altaf Khan
