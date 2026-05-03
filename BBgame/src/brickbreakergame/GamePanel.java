@@ -15,8 +15,8 @@ import java.awt.event.*;
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
     // Board dimensions
-    static final int WIDTH  = 800;
-    static final int HEIGHT = 600;
+    static final int WIDTH  = 880;
+    static final int HEIGHT = 680;
 
     // Game objects
     Paddle    paddle;
