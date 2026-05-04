@@ -29,3 +29,4 @@ public class Brick {
 				g.fillRoundRect(x, y, width, height, 5, 5); // makes the brick rounded
 				}			
 }
+
