@@ -1,13 +1,12 @@
 package brickbreakergame;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 public class BrickGrid {
 Brick[][] grid; // this is our 2D array = table of bricks 
 	
 	// these control the layout of the bricks
-	int rows = 5; 		// the amount rows of bricks 
-	int cols = 10; 		// the amount columns of bricks
+	int rows = 6; 		// the amount rows of bricks 
+	int cols = 11; 		// the amount columns of bricks
 	int brickW = 70; 	// the width of each brick 
 	int brickH = 40; 	// the Height of each brick 
 	int space = 3; 		// gaps between each brick
@@ -35,33 +34,59 @@ Brick[][] grid; // this is our 2D array = table of bricks
 	}
 	// checks if the ball is hitting any bricks
 	// Returns how many points were scored 
-	public int checkCollision( Ball ball ) {
-		int points = 0; // start with 0 points
-		
-		//loop through every brick in the grid 
-		for (Brick[] row : grid) {
-			for (Brick b : row) {
-				
-				 if (!b.alive) continue ; //  skips the bricks that are dead
+	public int checkCollision(Ball ball) {
+	    int points = 0;
 
-				 	// Check if the ball is overlapping with this brick
-	                // We check all 4 sides to see if they overlap
-				   
-	                if (ball.x + ball.size > b.x             			// ball's right side past brick's left side
-	                        && ball.x - ball.size < b.x + b.width  	// ball's left side past brick's right side
-	                        && ball.y + ball.size > b.y             	// ball's bottom past brick's top
-	                        && ball.y - ball.size < b.y + b.height) { // ball's top past brick's bottom
+	    // gets the bounding rect of the ball 
+	    Rectangle ballwalls = ball.getBounds();
 
-	                    b.alive = false;    // destroy the brick
-	                    ball.dy = -ball.dy; // make ball bounce (flip up or down direction)
-	                    points += 10;       // add 10 points for this brick 
+	    for (Brick[] row : grid) {
+	        for (Brick b : row) {
+	        	//skips bricks that are dead
+	            if (!b.alive) continue;
+
+	            Rectangle brickwalls = new Rectangle(b.x, b.y, b.width, b.height);
+
+	            if (ballwalls.intersects(brickwalls)) {
+	                b.alive = false;
+	                points += 10;
+
+	                //gets the edges of the ball
+	                int ballLeft   = ballwalls.x;
+	                int ballRight  = ballwalls.x + ballwalls.width;
+	                int ballTop    = ballwalls.y;
+	                int ballBottom = ballwalls.y + ballwalls.height;
+	                //gets the edges of brick
+	                int brickLeft   = brickwalls.x;
+	                int brickRight  = brickwalls.x + brickwalls.width;
+	                int brickTop    = brickwalls.y;
+	                int brickBottom = brickwalls.y + brickwalls.height;
+	                //how deep the ball goes into the sides of the brick.
+	                int overlapLeft   = ballRight - brickLeft;   // ball into brick from left
+	                int overlapRight  = brickRight - ballLeft;   // ball into brick from right
+	                int overlapTop    = ballBottom - brickTop;   // ball into brick from top
+	                int overlapBottom = brickBottom - ballTop;   // ball into brick from bottom
+
+	                // Find the smallest overlap (axis of least penetration)
+	                int minX = Math.min(overlapLeft, overlapRight);
+	                int minY = Math.min(overlapTop, overlapBottom);
+
+	                if (minX < minY) {
+	                    // Side hit -> bounce horizontally
+	                    ball.dx = -ball.dx;
+	                } else {
+	                    // Top/bottom hit -> bounce vertically
+	                    ball.dy = -ball.dy;
 	                }
+	             // stop after 1 brick hit this tick (prevents weird double hits)
+	                 return points;
 	            }
 	        }
-
-	        return points; // send the points back to GamePanel
 	    }
-
+	    
+	    return points;
+	}
+	
 	    // Counts how many bricks are still alive
 	    // GamePanel uses this to check if the player won
 	    public int countAlive() {
@@ -87,4 +112,5 @@ Brick[][] grid; // this is our 2D array = table of bricks
 	        	b.draw(g); // draw the brick in the screen
 	        	
 	        	}			
+}	        	}			
 }
