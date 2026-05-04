@@ -6,17 +6,18 @@ import java.awt.event.*;
 /**
 * Project: GamePanel.java
 * author Altaf Khan
-* version 3.0
+* version 3.1
 * Created:
 * Description: 
 * The main game panel. Runs the game loop via a Swing Timer,
 * handles keyboard input, and draws everything each frame.
 */
+@SuppressWarnings("serial")
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
     // Board dimensions
-    static final int WIDTH  = 800;
-    static final int HEIGHT = 600;
+    static final int WIDTH  = 880;
+    static final int HEIGHT = 680;
 
     // Game objects
     Paddle    paddle;
@@ -42,15 +43,15 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
 
         // Create the paddle, bricks, and ball
-        paddle = new Paddle(330, 540);
+        paddle = new Paddle(370, 620);
         bricks = new BrickGrid();
-        ball   = new Ball(390, 520);
+        ball   = new Ball(430, 600);
         
         // Start ball resting on the paddle
         ball.sitOnPaddle(paddle);  
 
         // Start the game loop timer (fires every 10ms)
-        timer = new Timer(10, this);
+        timer = new Timer(12, this);
         timer.start();
     }
 
