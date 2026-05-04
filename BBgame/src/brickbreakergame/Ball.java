@@ -1,3 +1,4 @@
+
 package brickbreakergame;
 
 import java.awt.Graphics;
@@ -41,7 +42,7 @@ public class Ball {
         // Loads ball.png from the SAME package folder (brickBraker)
         // Put ball.png in: src/brickBraker/ball.png
         try {
-            ballImg = ImageIO.read(getClass().getResource("ball.png"));
+            ballImg = ImageIO.read(getClass().getResource("Red ball.png"));
             // IOException = problem reading the image file
               // IllegalArgumentException = a method a bad input
         } catch (IOException | IllegalArgumentException e) {
@@ -85,7 +86,7 @@ public class Ball {
              // 0 is the left edge of the game screen
         if (x <= 0) {
             x = 0;
-        // Reverses the ball’s horizontal direction
+        // Reverses the ballâs horizontal direction
            // Makes the ball bounce off the wall   
             dx = -dx;
         }
@@ -135,7 +136,10 @@ public class Ball {
             		// (paddle.x + paddle.width / 2) center paddle 
             		// hit <0 (left) hit >0 (right) 0 = (center)
             int hitPos = (x + size / 2) - (paddle.x + paddle.width / 2);
-            dx = hitPos / 8;
+            dx = hitPos / 8; 
+            
+            if (dx > 4) dx = 4;
+            if (dx < -4) dx = -4;
 
             // Prevent perfectly vertical movement
               // Makes it move slightly to the right
