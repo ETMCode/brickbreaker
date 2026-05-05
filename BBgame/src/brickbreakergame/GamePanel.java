@@ -204,9 +204,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
         int key = e.getKeyCode();
 
         // Move paddle left or right
-        if (key == KeyEvent.VK_LEFT)  paddle.movingLeft  = true;
+        if (key == KeyEvent.VK_LEFT)  paddle.movingleft  = true;
         
-        if (key == KeyEvent.VK_RIGHT) paddle.movingRight = true;
+        if (key == KeyEvent.VK_RIGHT) paddle.movingright = true;
 
         if (key == KeyEvent.VK_SPACE) {
             if (gameOver || youWon) {
@@ -222,8 +222,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         int key = e.getKeyCode();
-        if (key == KeyEvent.VK_LEFT)  paddle.movingLeft  = false;
-        if (key == KeyEvent.VK_RIGHT) paddle.movingRight = false;
+        if (key == KeyEvent.VK_LEFT)  paddle.movingleft  = false;
+        if (key == KeyEvent.VK_RIGHT) paddle.movingright = false;
     }
 
     @Override
