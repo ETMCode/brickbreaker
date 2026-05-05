@@ -1,7 +1,7 @@
 package brickbreakergame;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-public class BrickGrid {
+public class bircks {
 Brick[][] grid; // this is our 2D array = table of bricks 
 	
 	// these control the layout of the bricks
