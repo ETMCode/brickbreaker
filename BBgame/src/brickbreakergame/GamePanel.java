@@ -44,7 +44,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
         // Create the paddle, bricks, and ball
         paddle = new Paddle(370, 620);
-        bricks = new BrickGrid();
+        bricks = new bricks();
         ball   = new Ball(430, 600);
         
         // Start ball resting on the paddle
