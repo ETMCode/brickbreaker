@@ -22,7 +22,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
     // Game objects
     Paddle    paddle;
     Ball      ball;
-    BrickGrid bricks;
+    bricks    bricks;
 
     // Game state
     int     score    = 0;
