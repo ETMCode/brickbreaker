@@ -1,7 +1,7 @@
 package brickbreakergame;
 import java.awt.Graphics;
 import java.awt.Rectangle;
-public class bircks {
+public class Bricks {
 Brick[][] grid; // this is our 2D array = table of bricks 
 	
 	// these control the layout of the bricks
@@ -14,7 +14,7 @@ Brick[][] grid; // this is our 2D array = table of bricks
 	int yoffset = 60; 	// how far from the top of the bricks grid start 
 	
 	//constructor - builds the whole grid of bricks
-	public BrickGrid () {
+	public Bricks () {
 		grid = new Brick[rows][cols]; //create the 2d array structure 
 		
 		//loops through every row and column to place a brick 
@@ -112,5 +112,5 @@ Brick[][] grid; // this is our 2D array = table of bricks
 	        	b.draw(g); // draw the brick in the screen
 	        	
 	        	}			
-}	        	}			
+        	}			
 }
